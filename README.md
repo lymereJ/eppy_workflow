@@ -9,7 +9,7 @@ This repository contains a set of Python functions and a master CSV file that ca
 + Add runs to the master CSV file and for each runs provide the arguments for each function
 + Run the `Main.py` script
 
-Hop'la you've got yourself modified EnergyPlus models!
+Hop'la, you've got yourself modified EnergyPlus models!
 
 ## Why?
 I like to use [Eppy](https://github.com/santoshphilip/eppy) to modify [EnergyPlus](https://github.com/NREL/EnergyPlus) models to run parametric studies. I've always been missing a central repository of all the function I have created so I could use the same function on any projects.
