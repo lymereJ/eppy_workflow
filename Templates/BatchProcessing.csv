@@ -1,0 +1,5 @@
+idf,-,Function1Name,Function2Name,etc..
+-,-,Function1Argument(s)Description,Function2Argument(s)Description,etc..
+PathToOriginalIdfFile\File.idf,PathToModifiedIdfFile\ModifiedFile1.idf,Argument(s)Value(s)Function1,Argument(s)Value(s)Function2,etc..
+PathToOriginalIdfFile\File.idf,PathToModifiedIdfFile\ModifiedFile2.idf,Argument(s)Value(s)Function1,Argument(s)Value(s)Function2,etc..
+etc..,etc..,etc..,etc..
