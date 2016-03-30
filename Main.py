@@ -3,7 +3,7 @@ from eppy.modeleditor import IDF
 import csv
 import importdir
 
-importdir.do("FunctionsLibrary",globals())
+importdir.do("Functions",globals())
 IDDFile = 'C:\EnergyPlusV8-3-0\Energy+.idd'
 IDF.setiddname(IDDFile)
 
