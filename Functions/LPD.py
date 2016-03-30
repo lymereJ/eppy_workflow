@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Set the LPD
+# Arg. Values: Any
+
 def LPD(idf_file,LPD):
 	ureg = UnitRegistry()
 	LightsObjects = idf_file.idfobjects["LIGHTS"]

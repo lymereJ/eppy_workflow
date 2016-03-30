@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Set the WWR of the test cell
+# Arg. Values: Any
+
 def WWR(idf_file,WWR):
 
 	ureg = UnitRegistry()

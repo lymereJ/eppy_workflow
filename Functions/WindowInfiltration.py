@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the Air Leakage (AL) for the window(s)
+# Arg. Values: Any
+
 def WindowInfiltration(idf_file,WindowInfiltration):
 	ureg = UnitRegistry()
 	WindowOpeningObjects = idf_file.idfobjects["AIRFLOWNETWORK:MULTIZONE:COMPONENT:DETAILEDOPENING"]

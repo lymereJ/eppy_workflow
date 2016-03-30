@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the length of the test cell
+# Arg. Values: Any
+
 def Length(idf_file,Length):
 	BuildingSurfaceObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
 	Length = float(Length) * 0.3048

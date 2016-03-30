@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Set the ELA for all the ELA objects in the model
+# Arg. Values: Any
+
 def EffectiveLeakageArea(idf_file,EffectiveLeakageArea):
 	ureg = UnitRegistry()
 	ELAObjects = idf_file.idfobjects["AIRFLOWNETWORK:MULTIZONE:SURFACE:EFFECTIVELEAKAGEAREA"]

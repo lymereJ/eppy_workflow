@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the window U-Factor
+# Arg. Values: Any
+
 def WindowUValue(idf_file,WindowUValue):
 	ureg = UnitRegistry()
 	WindowObjects = idf_file.idfobjects["WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM"]

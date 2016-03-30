@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the U-Value of the roof
+# Arg. Values: Any
+
 def RoofUValue(idf_file,RoofUValue):
 	ureg = UnitRegistry()
 	ConstructionObjects = idf_file.idfobjects["CONSTRUCTION"]

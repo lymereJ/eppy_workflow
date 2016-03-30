@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the width of the test cell
+# Arg. Values: Any
+
 def Width(idf_file,Width):
 	BuildingSurfaceObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
 	Width = float(Width) * 0.3048

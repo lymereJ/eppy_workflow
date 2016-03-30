@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Set the venting factor
+# Arg. Values: Any
+
 def VentingFactor(idf_file,VentingFactor):
 	WindowOpeningObjects = idf_file.idfobjects["AIRFLOWNETWORK:MULTIZONE:COMPONENT:DETAILEDOPENING"]
 	for i in range(0,len(WindowOpeningObjects)):

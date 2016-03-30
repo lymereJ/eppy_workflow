@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the unit from a 'center of the building' unit to a corner unit (more windows, more exposed exterior walls, ...)
+# Arg. Values: Y, N
+
 def Corner(idf_file,Corner):
 	if Corner == "Y":
 		BuildingSurfaceObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
@@ -44,7 +48,5 @@ def Corner(idf_file,Corner):
 		NewWindowAFN.Height_Factor_for_Opening_Factor_2 = 1
 		NewWindowAFN.Start_Height_Factor_for_Opening_Factor_2 = 0		
 		
-		
-
 if __name__ == '__main':
 	Corner(idf_file,Corner)

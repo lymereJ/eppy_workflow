@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Enable/disable cooling in the model by changing the value of the setpoint schedule - super elegant ...
+# Arg. Values: Y, N
+
 def Cooling(idf_file,Cooling):
 	ScheduleObjects = idf_file.idfobjects["SCHEDULE:CONSTANT"]
 	for i in range(0,len(ScheduleObjects)):

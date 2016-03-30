@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change the unit from being a 'middle' unit to a 'top' (with a roof)
+# Arg. Values: Y, N
+
 def Roof(idf_file,Roof):
 	if Roof == "Y":
 		BuildingSurfaceObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]

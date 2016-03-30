@@ -2,6 +2,10 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Set the internal mass surface area based on the thermal properties of the 'Furniture Construction' and the lbs/ft2 input
+# Arg. Values: Any
+
 def InternalMass(idf_file,InternalMass):
 	ureg = UnitRegistry()
 	InternalMassObjects = idf_file.idfobjects["INTERNALMASS"]

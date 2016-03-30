@@ -1,6 +1,10 @@
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
+# Context: Thermal comfort study in the PNW on a apartment unit test cell
+# Function: Change building azimuth
+# Arg. Values: Any
+
 def Orientation(idf_file,DegFromNorth):
 	BuildingObjects = idf_file.idfobjects["BUILDING"]
 	for i in range(0,len(BuildingObjects)):
