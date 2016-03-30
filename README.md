@@ -17,9 +17,9 @@ Hop'la, you've got yourself modified EnergyPlus models:exclamation:
 ## Structure
 
 * Root
-  * Main.py
-  * importdir.py
-  * :filefolder: FunctionLibrary
-    * Function1.py
-    * Function2.py
+  * :memo: Main.py
+  * :memo: importdir.py
+  * :file_folder: FunctionLibrary
+    * :memo: Function1.py
+    * :memo: Function2.py
     * etc...
