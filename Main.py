@@ -17,7 +17,6 @@ for i in range(0,len(BatchProcessing)):
 	nbcol = len(row)
 	if row[0] <> 'idf' and row[0] <> '-':
 		idf_file = IDF(row[0])
-		NewNameArguments = ""
 		for j in range(2,nbcol):
 			item = BatchProcessing[0][j]
 			func = getattr(eval(item),item)
