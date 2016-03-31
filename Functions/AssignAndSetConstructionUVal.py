@@ -2,7 +2,7 @@ from pint import UnitRegistry
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 
-# Context: Design assistance project
+# Context: Design assistance projects.
 # Function: Change the U-Value of the specified construction and assign it to all the surface of the specified type that have a 'Outside Boundary Condition' set to 'Outdoors'.
 # Important Note: 
 #				- The specified construction should have an insulation material named after the construction. 
@@ -18,11 +18,10 @@ def AssignAndSetConstructionUVal(idf_file,*args):
 	# Define the Unit Registery used for unit conversion
 	ureg = UnitRegistry()
 		
+	# Object and variables initialization
 	SurfaceType = args[0][0]
 	ConstructionName = args[0][1]
-	UValue = args[0][2]
-	
-	# Object and variable initialization
+	UValue = args[0][2]	
 	ConstructionObjects = idf_file.idfobjects["CONSTRUCTION"]
 	MaterialObjects = idf_file.idfobjects["MATERIAL"]
 	BuildingSurfaceObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
