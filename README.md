@@ -20,6 +20,7 @@ Hop'la, you've got yourself your modified EnergyPlus model(s) ready for simulati
 * Root
   * :memo: Main.py
   * :memo: importdir.py
+  * :memo: BatchProcessing.csv
   * :file_folder: Functions
     * :memo: Function1.py
     * :memo: Function2.py

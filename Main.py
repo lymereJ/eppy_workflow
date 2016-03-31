@@ -21,8 +21,7 @@ for i in range(0,len(BatchProcessing)):
 		for j in range(2,nbcol):
 			item = BatchProcessing[0][j]
 			func = getattr(eval(item),item)
-			arguments = row[j]
-			NewNameArguments = NewNameArguments + "-" + arguments
+			arguments = row[j].split(",")
 			func(idf_file, arguments)
 		idf_file.saveas(row[1][:-4]+".idf")
 	Idx = Idx + 1
