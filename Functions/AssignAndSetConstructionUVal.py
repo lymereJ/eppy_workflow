@@ -4,7 +4,7 @@ from eppy.modeleditor import IDF
 
 # Context: Design assistance projects.
 # Function: Change the U-Value of the specified construction and assign it to all the surface of the specified type that have a 'Outside Boundary Condition' set to 'Outdoors'.
-# Important Note: 
+# Important Notes: 
 #				- The specified construction should have an insulation material named after the construction. 
 #				  For example, if the name of the construction is  'Construction 1' the name of the insulation material should be 'Construction 1 Insulation'.
 #				- The insulation material has to be defined using the MATERIAL EnergyPlus object.
