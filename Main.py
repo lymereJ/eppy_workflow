@@ -12,7 +12,8 @@ BatchProcessing = list(csv.reader(BatchProcesingFile, delimiter=',', quotechar=c
 Idx = 0
 
 for i in range(0,len(BatchProcessing)):
-	print str(Idx)+" out of "+str(len(BatchProcessing))
+	if Idx >= 2:
+		print str(Idx-1)+" out of "+str(len(BatchProcessing)-2)+" models created."
 	row = BatchProcessing[i]
 	nbcol = len(row)
 	if row[0] <> 'idf' and row[0] <> '-':
