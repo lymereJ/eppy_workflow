@@ -14,6 +14,8 @@ I like to use [Eppy](https://github.com/santoshphilip/eppy) to modify [EnergyPlu
 + Run the `Main.py` script
 
 Hop'la, you've got yourself your modified EnergyPlus model(s) ready for simulation:exclamation:
+
+## Example
 To get a better idea of the workflow, there is a small example in the example folder of this repo.
 
 ## Structure
