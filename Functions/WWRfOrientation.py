@@ -5,7 +5,7 @@ from eppy.modeleditor import IDF
 # Context: Design assistance projects.
 # Function: Set the WWR by adjusting the height of the windows.
 # Important Note: 
-#				- The windows needs to be rectangles.
+#				- The windows needs to be rectangular shaped.
 # Arg. Values: Any > 0.
 
 def TranslatedOrientation(Azimuth):
