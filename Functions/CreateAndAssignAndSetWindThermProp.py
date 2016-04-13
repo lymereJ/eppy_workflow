@@ -12,6 +12,8 @@ from eppy.modeleditor import IDF
 #				- Orientation: North, East, South, Weast, and Any.
 
 def TranslatedOrientation(Azimuth):
+	if Azimuth >= 360:
+		Azimuth = Azimuth - 360
 	if Azimuth <= 45:
 		return "North"
 	elif Azimuth <= 135:
@@ -33,6 +35,8 @@ def CreateAndAssignAndSetWindThermProp(idf_file,*args):
 	VT = args[0][2]
 	Orientation = args[0][3]
 	WindowObjects = idf_file.idfobjects["FENESTRATIONSURFACE:DETAILED"]
+	BuildingObjects = idf_file.idfobjects["BUILDING"]
+	NorthAxis = BuildingObjects[0].North_Axis	
 	
 	# Conversion of the UFactor specified in IP to SI units
 	Ufactor = float(Ufactor)
@@ -53,7 +57,7 @@ def CreateAndAssignAndSetWindThermProp(idf_file,*args):
 
 	# Assign the new Construction to the windows facing the specified orientation
 	for i in range(0,len(WindowObjects)):
-		if WindowObjects[i].Surface_Type == "Window" and (TranslatedOrientation(WindowObjects[i].azimuth) == Orientation or Orientation == "Any"):
+		if WindowObjects[i].Surface_Type == "Window" and (TranslatedOrientation(WindowObjects[i].azimuth + NorthAxis) == Orientation or Orientation == "Any"):
 			WindowObjects[i].Construction_Name = "Window-" + str(Ufactor) + "-" + str(SHGC) + "-" + Orientation
 
 if __name__ == '__main':
