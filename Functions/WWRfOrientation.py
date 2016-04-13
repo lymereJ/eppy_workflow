@@ -35,6 +35,8 @@ def WWRfOrientation(idf_file,*args):
 	OpaqueObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
 	BuildingObjects = idf_file.idfobjects["BUILDING"]
 	NorthAxis = BuildingObjects[0].North_Axis
+	if NorthAxis == "":
+		NorthAxis = 0
 	
 	# Retrieve the total net window area
 	for i in range(0,len(WindowObjects)):
