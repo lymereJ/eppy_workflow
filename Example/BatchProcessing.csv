@@ -1,0 +1,3 @@
+idf,Functions,TimeStep,AssignAndSetConstructionUVal,WWRfOrientation,AddInternalMassToZone,CreateAndAssignZoneTypes,LPDperZoneType
+-,Arguments,TimeStep,"SurfaceType,ConstructionName,Uvalue","WWR,Orientation","NbZones,ZoneNames,InternalMassDensity{lbs/ft2}","ZoneType,ZoneName1,…,n","LPD,ZoneType,ScheduleName"
+SingleZone.idf,SingleZone-modified.idf,8,-,"0.5,North","1,Thermal Zone,0.8","Office,Thermal Zone","1.2,Office,Lighting"
