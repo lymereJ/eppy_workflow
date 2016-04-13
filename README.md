@@ -8,12 +8,13 @@ I like to use [Eppy](https://github.com/santoshphilip/eppy) to modify [EnergyPlu
 
 ## How does it work?
 + Write Python functions using [Eppy](https://github.com/santoshphilip/eppy) 
-+ Add these functions to the master CSV file
-+ Add parametric runs to the master CSV file
-+ For each run provide the corresponding argument for each function
++ Add these functions to the master CSV file or the BatchProcessingCreator excel workbook
++ Add parametric runs to the master CSV file or the BatchProcessingCreator excel workbook
++ For each run provide the corresponding argument for each function (if the function does not apply just input "-")
 + Run the `Main.py` script
 
 Hop'la, you've got yourself your modified EnergyPlus model(s) ready for simulation:exclamation:
+To get a better idea of the workflow, there is a small example in the example folder of this repo.
 
 ## Structure
 
