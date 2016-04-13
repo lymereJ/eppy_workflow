@@ -9,6 +9,8 @@ from eppy.modeleditor import IDF
 # Arg. Values: Any > 0.
 
 def TranslatedOrientation(Azimuth):
+	if Azimuth >= 360:
+		Azimuth = Azimuth - 360
 	if Azimuth <= 45:
 		return "North"
 	elif Azimuth <= 135:
@@ -31,15 +33,17 @@ def WWRfOrientation(idf_file,*args):
 	TotalOpaqueArea = 0
 	WindowObjects = idf_file.idfobjects["FENESTRATIONSURFACE:DETAILED"]
 	OpaqueObjects = idf_file.idfobjects["BUILDINGSURFACE:DETAILED"]
+	BuildingObjects = idf_file.idfobjects["BUILDING"]
+	NorthAxis = BuildingObjects[0].North_Axis
 	
 	# Retrieve the total net window area
 	for i in range(0,len(WindowObjects)):
-		if WindowObjects[i].Surface_Type == "Window" and (TranslatedOrientation(WindowObjects[i].azimuth) == Orientation or Orientation == "Any"):
+		if WindowObjects[i].Surface_Type == "Window" and (TranslatedOrientation(WindowObjects[i].azimuth + NorthAxis) == Orientation or Orientation == "Any"):
 			TotalWindowArea = TotalWindowArea + WindowObjects[i].area
 	
 	# Retrieve the total gross wall area
 	for i in range (0,len(OpaqueObjects)):
-		if OpaqueObjects[i].Outside_Boundary_Condition == "Outdoors" and OpaqueObjects[i].Surface_Type == "Wall" and (TranslatedOrientation(OpaqueObjects[i].azimuth) == Orientation or Orientation == "Any"):
+		if OpaqueObjects[i].Outside_Boundary_Condition == "Outdoors" and OpaqueObjects[i].Surface_Type == "Wall" and (TranslatedOrientation(OpaqueObjects[i].azimuth + NorthAxis) == Orientation or Orientation == "Any"):
 			TotalOpaqueArea = TotalOpaqueArea + OpaqueObjects[i].area
 	
 	# Determine the reference WWR and the height modifier based on the user input WWR
@@ -48,7 +52,7 @@ def WWRfOrientation(idf_file,*args):
 	
 	# Adjust the height of the windows according to the modifier previously calculated
 	for i in range(0, len(WindowObjects)):
-		if TranslatedOrientation(WindowObjects[i].azimuth) == Orientation or Orientation == "Any":
+		if TranslatedOrientation(WindowObjects[i].azimuth - NorthAxis) == Orientation or Orientation == "Any":
 			MaxHgt = max(WindowObjects[i].Vertex_1_Zcoordinate,WindowObjects[i].Vertex_2_Zcoordinate,WindowObjects[i].Vertex_3_Zcoordinate,WindowObjects[i].Vertex_4_Zcoordinate)
 			MinHgt = min(WindowObjects[i].Vertex_1_Zcoordinate,WindowObjects[i].Vertex_2_Zcoordinate,WindowObjects[i].Vertex_3_Zcoordinate,WindowObjects[i].Vertex_4_Zcoordinate)
 			WindowHeight = MaxHgt - MinHgt
