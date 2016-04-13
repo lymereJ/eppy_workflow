@@ -54,7 +54,7 @@ def WWRfOrientation(idf_file,*args):
 	
 	# Adjust the height of the windows according to the modifier previously calculated
 	for i in range(0, len(WindowObjects)):
-		if TranslatedOrientation(WindowObjects[i].azimuth - NorthAxis) == Orientation or Orientation == "Any":
+		if TranslatedOrientation(WindowObjects[i].azimuth + NorthAxis) == Orientation or Orientation == "Any":
 			MaxHgt = max(WindowObjects[i].Vertex_1_Zcoordinate,WindowObjects[i].Vertex_2_Zcoordinate,WindowObjects[i].Vertex_3_Zcoordinate,WindowObjects[i].Vertex_4_Zcoordinate)
 			MinHgt = min(WindowObjects[i].Vertex_1_Zcoordinate,WindowObjects[i].Vertex_2_Zcoordinate,WindowObjects[i].Vertex_3_Zcoordinate,WindowObjects[i].Vertex_4_Zcoordinate)
 			WindowHeight = MaxHgt - MinHgt
