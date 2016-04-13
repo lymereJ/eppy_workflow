@@ -5,7 +5,7 @@ from eppy.modeleditor import IDF
 # Context: Design assistance projects.
 # Function: Creates a LIGHT object with specified LPD and assign it to the ZONELIST object that matches the zone type specified as input.
 #			If the object already exist, it will just be modified.			
-# Important Note: 
+# Important Notes: 
 #				- A ZONELIST object must be created for each zone type.
 #				- use the CreateAndAssignZoneTypes.py script to do that faster.
 # Arg. Values: 
@@ -58,7 +58,7 @@ def LPDperZoneType(idf_file,*args):
 		NewLightsObject.Zone_or_ZoneList_Name = ZoneType
 		NewLightsObject.Schedule_Name = ScheduleName
 		NewLightsObject.Design_Level_Calculation_Method = "Watts/Area"
-		NewLightsObject.Watts_per_Zone_Floor_Area = LPDinSI
+		NewLightsObject.Watts_per_Zone_Floor_Area = LPDinSI.magnitude
 		
 		# If FracRad and FracVis are not provided, assumed to be Surface Mount. Values as per the EnergyPlus I/O reference manual
 		if len(args[0]) == 5:
