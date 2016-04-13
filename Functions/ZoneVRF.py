@@ -17,7 +17,7 @@ from eppy.modeleditor import IDF
 #				- DOASSystem: Any available DOAS system.
 
 def ZoneVRF(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -55,6 +55,7 @@ def ZoneVRF(idf_file,*args):
 	ZoneVRF.Supply_Fan_Operating_Mode_Schedule_Name = "IntermittentFan"
 	ZoneVRF.Supply_Fan_Total_Efficiency = 0.65
 	ZoneVRF.Supply_Fan_Delta_Pressure = FanEffSI.magnitude * ZoneVRF.Supply_Fan_Total_Efficiency
+	# Default ASHRAE sizing method: delta-t = 20F
 	ZoneVRF.Zone_Cooling_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
 	ZoneVRF.Zone_Cooling_Design_Supply_Air_Temperature_Difference = 11.1
 	ZoneVRF.Zone_Heating_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
@@ -68,6 +69,5 @@ def ZoneVRF(idf_file,*args):
 			NewZoneVRF = idf_file.copyidfobject(ZoneVRF)
 			idf_file.idfobjects["HVACTEMPLATE:ZONE:VRF"][-1].Zone_Name = ZoneNames[i]	
 	
-
 if __name__ == '__main':
 	ZoneVRF(idf_file,*args)	

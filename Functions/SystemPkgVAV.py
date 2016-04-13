@@ -24,7 +24,7 @@ from eppy.modeleditor import IDF
 #				- ReturnFanEff: Any > 0. (Optional)
 
 def SystemPkgVAV(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -45,7 +45,6 @@ def SystemPkgVAV(idf_file,*args):
 		HeatRecEff = args[0][13]
 	if ReturnFan == "Yes":
 		ReturnFanEff = args[0][14]
-	
 	
 	# Conversion of the Cooling EER to Cooling COP; According to ASHRAE 90.1 Appendix G, since the fan will run continuously the fan power should be modeled separetly of the cooling efficiency rating
 	ClgCOP = ((1/3.413)+0.012167)/((1/float(ClgEER))-0.012167)
@@ -88,6 +87,7 @@ def SystemPkgVAV(idf_file,*args):
 	else:
 		PkgVAVSystem.Minimum_Outdoor_Air_Flow_Rate = "autosize"
 	PkgVAVSystem.Economizer_Type = Economizer
+	# Default for Seattle, WA; climate zone 4C	
 	PkgVAVSystem.Economizer_Maximum_Limit_DryBulb_Temperature = 23.8
 	PkgVAVSystem.Economizer_Maximum_Limit_Enthalpy = 47257
 	PkgVAVSystem.Heat_Recovery_Type = HeatRec

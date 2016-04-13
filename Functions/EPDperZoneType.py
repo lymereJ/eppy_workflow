@@ -14,7 +14,7 @@ from eppy.modeleditor import IDF
 #				- ScheduleName: Any available schedule name.
 
 def EPDperZoneType(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 	
 	# Object and variables initialization	

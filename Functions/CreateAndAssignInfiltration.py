@@ -12,7 +12,7 @@ from eppy.modeleditor import IDF
 #				- Method: ACH or CFMperExtWallArea
 #				- InfFlow : Any > 0.
 
-def CreateAndAssignAndSetInfiltration(idf_file,*args):
+def CreateAndAssignInfiltration(idf_file,*args):
 	# Define the Unit Registery used for unit conversion
 	ureg = UnitRegistry()
 	
@@ -43,4 +43,4 @@ def CreateAndAssignAndSetInfiltration(idf_file,*args):
 	NewInfObject.Velocity_Term_Coefficient = 0.244
 	
 if __name__ == '__main':
-	CreateAndAssignAndSetInfiltration(idf_file,*args)
+	CreateAndAssignInfiltration(idf_file,*args)

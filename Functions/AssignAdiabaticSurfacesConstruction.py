@@ -2,7 +2,7 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 
 # Context: Design assistance projects.
-# Function: Assign the adiabatic surfaces construction.
+# Function: Assign the construction of adiabatic surfaces.
 # Arg. Values: 
 #				- Surface Type: Wall, Roof, Floor.
 #				- Construction: Any construction available in the model that matches the above specification.

@@ -3,9 +3,7 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 
 # Context: Design assistance projects.
-# Function: Create and Assign a window Construction to the windows facing the specified orientation and adjust the U-Factor and and SHGC of the WindowMaterial:SimpleGlazingSystem
-# Important Notes:
-#				- 
+# Function: Create and assign a window Construction to the windows facing the specified orientation and adjust the U-Factor and and SHGC of the WindowMaterial:SimpleGlazingSystem
 # Arg. Values: 
 #				- Ufactor: Any > 0.
 #				- SHGC: Any > 0.
@@ -26,7 +24,7 @@ def TranslatedOrientation(Azimuth):
 		return "North"
 
 def CreateAndAssignAndSetWindThermProp(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 	
 	# Object and variables initialization

@@ -14,7 +14,7 @@ from eppy.modeleditor import IDF
 #				- ScheduleName: Any available schedule name.
 
 def LPDperZoneType(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 	
 	# Object and variables initialization	
@@ -43,6 +43,8 @@ def LPDperZoneType(idf_file,*args):
 				# Assign the new LPD, Zone Type and Lighting Fraction
 				LightsObjects[i].Watts_per_Zone_Floor_Area = LPDinSI.magnitude
 				LightsObjects[i].Zone_or_ZoneList_Name = ZoneType
+				
+				# If FracRad and FracVis are not provided, assumed to be Surface Mount. Values as per the EnergyPlus I/O reference manual
 				if len(args[0]) == 5:
 					LightsObjects[i].Fraction_Radiant = FracRad
 					LightsObjects[i].Fraction_Visible = FracVis

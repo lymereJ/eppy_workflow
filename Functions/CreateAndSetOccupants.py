@@ -14,7 +14,7 @@ from eppy.modeleditor import IDF
 #				- RadFrac (Optional): 1 < Any < 0.
 
 def CreateAndSetOccupants(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization

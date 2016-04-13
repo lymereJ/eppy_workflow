@@ -15,7 +15,7 @@ from eppy.modeleditor import IDF
 #				- ReheatType: Electric, HotWater, or Gas.
 
 def ZoneVAV(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -58,6 +58,7 @@ def ZoneVAV(idf_file,*args):
 	ZoneVAV.Outdoor_Air_Method = "Flow/Area"
 	ZoneVAV.Outdoor_Air_Flow_Rate_per_Zone_Floor_Area = OACFMperFt2SI.magnitude
 	ZoneVAV.Reheat_Coil_Type = ReheatType
+	# Default ASHRAE sizing method: delta-t = 20F
 	ZoneVAV.Zone_Cooling_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
 	ZoneVAV.Zone_Cooling_Design_Supply_Air_Temperature_Difference = 11.1
 	ZoneVAV.Zone_Heating_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"

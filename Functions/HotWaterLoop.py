@@ -13,7 +13,7 @@ from eppy.modeleditor import IDF
 #				- PumpType: SinglePump, PumpPerTowerOrBoiler, TwoHeaderedPumps, ..., FiveHeaderedPumps.
 
 def HotWaterLoop(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -38,6 +38,7 @@ def HotWaterLoop(idf_file,*args):
 	HotWaterLoop = idf_file.newidfobject("HVACTEMPLATE:PLANT:HOTWATERLOOP")
 	HotWaterLoop.Name = Name
 	if OAReset == "Yes":
+		# Based on ASHRAE 90.1 Appendix G hot water loop reset
 		HotWaterLoop.Hot_Water_Setpoint_Reset_Type = "OutdoorAirTemperatureReset"
 		HotWaterLoop.Hot_Water_Setpoint_at_Outdoor_DryBulb_Low = 82.2
 		HotWaterLoop.Hot_Water_Reset_Outdoor_DryBulb_Low = -6.7

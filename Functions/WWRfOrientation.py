@@ -23,7 +23,7 @@ def TranslatedOrientation(Azimuth):
 		return "North"
 
 def WWRfOrientation(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization

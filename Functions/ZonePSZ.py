@@ -14,7 +14,7 @@ from eppy.modeleditor import IDF
 #				- OACFMperFt2: Any > 0.
 
 def ZonePSZ(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -43,6 +43,7 @@ def ZonePSZ(idf_file,*args):
 	ZonePSZ.Zone_Cooling_Sizing_Factor = 1.15
 	ZonePSZ.Outdoor_Air_Method = "Flow/Area"
 	ZonePSZ.Outdoor_Air_Flow_Rate_per_Zone_Floor_Area = OACFMperFt2SI.magnitude
+	# Default ASHRAE sizing method: delta-t = 20F
 	ZonePSZ.Zone_Cooling_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
 	ZonePSZ.Zone_Cooling_Design_Supply_Air_Temperature_Difference = 11.1
 	ZonePSZ.Zone_Heating_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"

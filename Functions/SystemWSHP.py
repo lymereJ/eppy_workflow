@@ -15,8 +15,8 @@ from eppy.modeleditor import IDF
 #				- ClgEER: Any > 0.
 #				- HtgCOP: Any > 0.
 
-def WSHP(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+def SystemWSHP(idf_file,*args):
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -53,6 +53,7 @@ def WSHP(idf_file,*args):
 	WSHP.Supply_Fan_Delta_Pressure = FanEffSI.magnitude * WSHP.Supply_Fan_Total_Efficiency
 	WSHP.Cooling_Coil_Gross_Rated_COP = float(ClgEER) / 3.413
 	WSHP.Heat_Pump_Heating_Coil_Gross_Rated_COP = HtgCOP
+	# Default ASHRAE sizing method: delta-t = 20F
 	WSHP.Zone_Cooling_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
 	WSHP.Zone_Cooling_Design_Supply_Air_Temperature_Difference = 11.1
 	WSHP.Zone_Heating_Design_Supply_Air_Temperature_Input_Method = "TemperatureDifference"
@@ -65,4 +66,4 @@ def WSHP(idf_file,*args):
 			idf_file.idfobjects["HVACTEMPLATE:ZONE:WATERTOAIRHEATPUMP"][-1].Zone_Name = ZoneNames[i]	
 
 if __name__ == '__main':
-	WSHP(idf_file,*args)
+	SystemWSHP(idf_file,*args)

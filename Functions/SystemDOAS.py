@@ -18,7 +18,7 @@ from eppy.modeleditor import IDF
 #				- HeatRecEff: 1 > Any > 0.
 
 def SystemDOAS(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -54,6 +54,7 @@ def SystemDOAS(idf_file,*args):
 	SystemDOAS.Supply_Fan_Delta_Pressure = SupplyFanEffSI.magnitude * SystemDOAS.Supply_Fan_Total_Efficiency	
 	SystemDOAS.Cooling_Coil_Type = ClgCoilType
 	SystemDOAS.Cooling_Coil_Design_Setpoint = ClgSetpointSI.magnitude
+	
 	if ClgCoilType <> "None":
 		SystemDOAS.DX_Cooling_Coil_Gross_Rated_COP = float(ClgEER) / 3.413
 	else:

@@ -19,7 +19,7 @@ from eppy.modeleditor import IDF
 #				- Economizer: NoEconomizer, FixedDryBulb.
 
 def SystemPSZ(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
@@ -65,9 +65,10 @@ def SystemPSZ(idf_file,*args):
 	SystemPSZ.Cooling_Coil_Type = ClgCoilType
 	if ClgCoilType == "TwoSpeedDX":
 		SystemPSZ.Number_of_Speeds_for_Cooling = 2
-	SystemPSZ.Cooling_Design_Supply_Air_Temperature = 12.8
 	SystemPSZ.DX_Cooling_Coil_Gross_Rated_COP = ClgCOP
 	SystemPSZ.Heating_Coil_Type = HtgCoilType
+	# Delta-t 20F
+	SystemPSZ.Cooling_Design_Supply_Air_Temperature = 12.8
 	SystemPSZ.Heating_Design_Supply_Air_Temperature = 33.33
 	if HtgCoilType <> "Gas":
 		SystemPSZ.Heat_Pump_Heating_Coil_Gross_Rated_COP = HtgCOP
@@ -75,6 +76,7 @@ def SystemPSZ(idf_file,*args):
 	if MinOA <> "autosize":
 		SystemPSZ.Minimum_Outdoor_Air_Flow_Rate = MinOASI.magnitude
 	SystemPSZ.Economizer_Type = Economizer
+	# Default for Seattle, WA; climate zone 4C
 	SystemPSZ.Economizer_Maximum_Limit_DryBulb_Temperature = 23.8
 	
 

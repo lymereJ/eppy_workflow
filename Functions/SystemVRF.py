@@ -19,7 +19,7 @@ from eppy.modeleditor import IDF
 #				- DefrostType: Resistive or ReverseCycle
 
 def SystemVRF(idf_file,*args):
-	# Define the Unit Registery used for unit conversion
+	# Define the Unit Registry used for unit conversion
 	ureg = UnitRegistry()
 
 	# Object and variables initialization
