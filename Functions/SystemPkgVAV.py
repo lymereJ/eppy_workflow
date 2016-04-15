@@ -86,6 +86,7 @@ def SystemPkgVAV(idf_file,*args):
 		PkgVAVSystem.Minimum_Outdoor_Air_Flow_Rate = MinOASI.magnitude
 	else:
 		PkgVAVSystem.Minimum_Outdoor_Air_Flow_Rate = "autosize"
+	PkgVAVSystem.Minimum_Outdoor_Air_Control_Type = "FixedMinimum"
 	PkgVAVSystem.Economizer_Type = Economizer
 	# Default for Seattle, WA; climate zone 4C	
 	PkgVAVSystem.Economizer_Maximum_Limit_DryBulb_Temperature = 23.8

@@ -32,9 +32,10 @@ def ZoneVRF(idf_file,*args):
 	Thermostat = args[0][NbZone+2]
 	OACFMperFt2 = args[0][NbZone+3]	
 	FanEff = args[0][NbZone+4]	
-	DOAS = args[0][NbZone+5]
+	FanOperation = args[0][NbZone+5]	
+	DOAS = args[0][NbZone+6]
 	if DOAS == "Yes":
-		DOASSystem = args[0][NbZone+6]
+		DOASSystem = args[0][NbZone+7]
 
 	# Conversion from W/Cfm to m3/second
 	OACFMperFt2 = float(OACFMperFt2)
@@ -52,7 +53,10 @@ def ZoneVRF(idf_file,*args):
 	ZoneVRF.Zone_Cooling_Sizing_Factor = 1.15
 	ZoneVRF.Outdoor_Air_Method = "Flow/Area"
 	ZoneVRF.Outdoor_Air_Flow_Rate_per_Zone_Floor_Area = OACFMperFt2SI.magnitude
-	ZoneVRF.Supply_Fan_Operating_Mode_Schedule_Name = "IntermittentFan"
+	if FanOperation == "Intermittent":
+		ZoneVRF.Supply_Fan_Operating_Mode_Schedule_Name = "IntermittentFan"
+	else:
+		ZoneVRF.Supply_Fan_Operating_Mode_Schedule_Name = "AlwaysOn"
 	ZoneVRF.Supply_Fan_Total_Efficiency = 0.65
 	ZoneVRF.Supply_Fan_Delta_Pressure = FanEffSI.magnitude * ZoneVRF.Supply_Fan_Total_Efficiency
 	# Default ASHRAE sizing method: delta-t = 20F
